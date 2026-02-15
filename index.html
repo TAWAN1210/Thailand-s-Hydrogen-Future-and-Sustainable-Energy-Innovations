@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไฮโดรเจน: พลังงานแห่งอนาคต | ประเทศไทย</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', 'Pridi', 'Segoe UI', Tahoma, system-ui, sans-serif;
+            background: #f4f7fb;
+            color: #1e2f4e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header */
+        .hero {
+            background: linear-gradient(145deg, #0b2b40 0%, #123b4e 100%);
+            color: white;
+            padding: 3rem 0 2.5rem 0;
+            border-bottom: 6px solid #4aa3a2;
+            box-shadow: 0 10px 20px rgba(0,20,30,0.15);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hero h1 span {
+            font-size: 3rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            border-left: 4px solid #7fd1c0;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* sections */
+        section {
+            background: white;
+            border-radius: 30px;
+            padding: 2.2rem 2.5rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 15px 30px -10px rgba(18, 52, 77, 0.15);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 3px solid #d0e2f2;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 i, h2 span {
+            font-size: 2.3rem;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            background: #ecf3fa;
+            padding: 1.5rem 2rem;
+            border-radius: 40px 10px 40px 10px;
+            color: #0c3346;
+        }
+
+        /* ตารางสีไฮโดรเจน */
+        .color-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.03);
+        }
+
+        .color-table th {
+            background: #1c4c5f;
+            color: white;
+            font-weight: 600;
+            padding: 1rem 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .color-table td {
+            padding: 1rem 0.8rem;
+            border-bottom: 1px solid #cbdbe9;
+            vertical-align: top;
+        }
+
+        .color-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .color-table tbody tr:hover {
+            background: #f1f9ff;
+        }
+
+        .color-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .badge-grey { background: #a0a0a0; color: #1e1e1e; }
+        .badge-blue { background: #6ab0e6; color: #003153; }
+        .badge-green { background: #6fcf97; color: #1b4d2b; }
+        .badge-white { background: #e0e0e0; color: #3a4a5a; border: 1px solid #aaa; }
+
+        /* กระบวนการผลิต */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin: 2rem 0 1rem;
+        }
+
+        .process-card {
+            background: #f6fafe;
+            border-radius: 28px;
+            padding: 1.8rem 1.5rem;
+            border-left: 6px solid;
+            box-shadow: 0 10px 15px -8px #7b9eb5;
+        }
+
+        .process-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-smr { border-left-color: #9aa9b7; }
+        .card-electrolysis { border-left-color: #39a78e; }
+        .card-fuelcell { border-left-color: #f4b740; }
+
+        .process-card p {
+            color: #1f3b4e;
+        }
+
+        /* การใช้งานจริง */
+        .usage-highlight {
+            background: #e2f0f5;
+            border-radius: 30px;
+            padding: 1.8rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feature-list {
+            list-style: none;
+            flex: 2;
+        }
+
+        .feature-list li {
+            margin: 0.8rem 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-list li strong {
+            color: #0f4b5e;
+        }
+
+        .mirai-card {
+            background: white;
+            border-radius: 30px;
+            padding: 1.5rem;
+            min-width: 220px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 8px 18px #b5d1dd;
+        }
+
+        .mirai-card .badge {
+            background: #226688;
+            color: white;
+            border-radius: 50px;
+            padding: 0.3rem 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.7rem 0;
+        }
+
+        /* ทิศทางประเทศไทย */
+        .roadmap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .milestone {
+            background: #ffffff;
+            border: 2px solid #c0dcee;
+            border-radius: 50px;
+            padding: 0.8rem 1.8rem;
+            font-weight: 600;
+            color: #1b5a7a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 8px #d6e9f5;
+        }
+
+        .milestone span {
+            background: #237a9b;
+            color: white;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+        }
+
+        .carbon-targets {
+            background: #1d4b5e;
+            color: white;
+            border-radius: 40px;
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .target-item {
+            text-align: center;
+        }
+
+        .target-year {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        /* สรุป */
+        .summary-box {
+            background: #c7e1ee;
+            border-radius: 40px;
+            padding: 2rem;
+            font-size: 1.3rem;
+            text-align: center;
+            font-weight: 500;
+            color: #04313f;
+            border: 2px dashed #1d7c9c;
+        }
+
+        /* footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            color: #4a6572;
+            font-size: 0.95rem;
+        }
+
+        hr {
+            border: 1px solid #bfd9e8;
+            margin: 2rem 0 0;
+        }
+
+        @media (max-width: 650px) {
+            .hero h1 { font-size: 2rem; flex-wrap: wrap; }
+            section { padding: 1.5rem; }
+            .color-table th, .color-table td { padding: 0.7rem 0.4rem; font-size: 0.9rem; }
+            .color-badge { min-width: 80px; font-size: 0.8rem; }
+            .process-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>
+                <span>🌐</span> ไฮโดรเจน: พลังงานแห่งอนาคต
+            </h1>
+            <div class="subhead">
+                พลังงานสะอาดที่เป็นมิตรต่อโลก เปลี่ยนน้ำให้เป็นพลัง ไม่ปล่อยมลพิษ
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- บทนำ -->
+        <section>
+            <h2><span>💧</span> ไฮโดรเจนคืออะไร</h2>
+            <div class="intro-text">
+                <p>⚡ ไฮโดรเจนเป็นธาตุที่เบาที่สุดและมีมากที่สุดในโลก พบได้ทั่วไปตามธรรมชาติในรูปของส่วนประกอบของน้ำ. มีคุณสมบัติเด่นคือเป็นก๊าซที่ไม่มีสี ไม่มีกลิ่น ติดไฟง่าย และมีความสะอาดสูง เนื่องจากเมื่อเผาไหม้แล้วจะได้ผลผลิตเพียง <strong>"น้ำและพลังงาน"</strong> เท่านั้น โดยไม่มีการปล่อยก๊าซเรือนกระจกที่ส่งผลต่อสภาพภูมิอากาศ.</p>
+            </div>
+        </section>
+
+        <!-- เฉดสีของไฮโดรเจน -->
+        <section>
+            <h2><span>🎨</span> ประเภทของไฮโดรเจนแบ่งตาม "เฉดสี"</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">แม้ก๊าซไฮโดรเจนจะไม่มีสี แต่ในเชิงอุตสาหกรรมมีการระบุ "สี" เพื่อบ่งบอกถึงแหล่งที่มาของพลังงานและกระบวนการผลิต ดังนี้:</p>
+            <table class="color-table">
+                <thead>
+                    <tr>
+                        <th>สีของไฮโดรเจน</th>
+                        <th>กระบวนการผลิต</th>
+                        <th>ผลกระทบต่อสิ่งแวดล้อม</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="color-badge badge-grey">สีเทา (Grey)</span></td>
+                        <td>ผลิตจากก๊าซธรรมชาติผ่านกระบวนการเปลี่ยนรูปด้วยไอน้ำ (Steam Reforming).</td>
+                        <td>มีการปล่อยก๊าซคาร์บอนไดออกไซด์ (CO₂) ในปริมาณมากตลอดวงจรชีวิต.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="color-badge badge-blue">สีฟ้า (Blue)</span></td>
+                        <td>ผลิตจากก๊าซธรรมชาติเหมือนสีเทา แต่มีเทคโนโลยีดักจับและกักเก็บคาร์บอน (CCS).</td>
+                        <td>จัดเป็นไฮโดรเจนคาร์บอนต่ำ เป็นตัวเลือกที่น่าสนใจในระยะสั้นและระยะกลาง.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="color-badge badge-green">สีเขียว (Green)</span></td>
+                        <td>ใช้ไฟฟ้าจากพลังงานหมุนเวียนแยกไฮโดรเจนออกจากน้ำ (Electrolysis).</td>
+                        <td>สะอาดที่สุด ไม่มีการปล่อย CO₂ เลยตลอดกระบวนการผลิต.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="color-badge badge-white">สีขาว (White)</span></td>
+                        <td>เป็นไฮโดรเจนที่เกิดขึ้นเองตามธรรมชาติหรือเป็นผลพลอยได้จากอุตสาหกรรม.</td>
+                        <td>ขึ้นอยู่กับแหล่งที่มา แต่ส่วนใหญ่ถือเป็นทรัพยากรที่มีอยู่แล้ว.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- กระบวนการผลิตและเทคโนโลยี -->
+        <section>
+            <h2><span>⚙️</span> กระบวนการผลิตและเทคโนโลยีที่สำคัญ</h2>
+            <div class="process-grid">
+                <div class="process-card card-smr">
+                    <h3>🔥 Steam Methane Reforming (SMR)</h3>
+                    <p>เป็นวิธีที่นิยมที่สุดในปัจจุบันสำหรับผลิตไฮโดรเจนสีเทาและสีฟ้า โดยใช้ความร้อนและไอน้ำแยกไฮโดรเจนออกจากก๊าซธรรมชาติ.</p>
+                </div>
+                <div class="process-card card-electrolysis">
+                    <h3>⚡ Electrolysis</h3>
+                    <p>การแยกน้ำด้วยไฟฟ้า ใช้กระแสไฟฟ้าผ่านน้ำเพื่อแยกโมเลกุลออกเป็นก๊าซไฮโดรเจนและออกซิเจน หากใช้พลังงานสะอาดจะเรียกว่าไฮโดรเจนสีเขียว.</p>
+                </div>
+                <div class="process-card card-fuelcell">
+                    <h3>🔋 Fuel Cell</h3>
+                    <p>เซลล์เชื้อเพลิง อุปกรณ์ที่เปลี่ยนพลังงานเคมีจากไฮโดรเจนเป็นพลังงานไฟฟ้าโดยไม่ผ่านการเผาไหม้ ให้ประสิทธิภาพสูงกว่าเครื่องยนต์สันดาป 2-3 เท่า.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- การใช้งานจริง ยานยนต์ไฟฟ้าเซลล์เชื้อเพลิง -->
+        <section>
+            <h2><span>🚗</span> ยานยนต์ไฟฟ้าเซลล์เชื้อเพลิง (FCEV)</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.15rem;">ประเทศไทยได้เริ่มทดสอบการใช้งานไฮโดรเจนในภาคขนส่งอย่างเป็นรูปธรรม:</p>
+            <div class="usage-highlight">
+                <ul class="feature-list">
+                    <li><span>⛽</span> <strong>สถานีเติมก๊าซไฮโดรเจนแห่งแรก:</strong> อ.บางละมุง จ.ชลบุรี</li>
+                    <li><span>🚙</span> <strong>Toyota Mirai:</strong> รถยนต์พลังงานไฮโดรเจนที่ปล่อยเพียง "น้ำบริสุทธิ์" ออกมา</li>
+                    <li><span>⚡</span> <strong>จุดเด่น:</strong> เติมก๊าซได้รวดเร็วภายใน 5 นาที และวิ่งได้ไกลกว่า 800 กม. ต่อการเติม</li>
+                </ul>
+                <div class="mirai-card">
+                    <span style="font-size: 4rem;">💧➡️⚡</span>
+                    <div class="badge">Toyota Mirai</div>
+                    <div>ปล่อยเพียงน้ำ</div>
+                    <small>พิกัด 800+ km / 5 นาที</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- ทิศทางประเทศไทย -->
+        <section>
+            <h2><span>🇹🇭</span> ทิศทางของประเทศไทยสู่เป้าหมายความยั่งยืน</h2>
+            <p style="font-size: 1.2rem;">รัฐบาลไทยมีแผนยุทธศาสตร์เพื่อมุ่งสู่ <strong>Carbon Neutrality</strong> (ค.ศ. 2050) และ <strong>Net Zero Emissions</strong> (ค.ศ. 2065).</p>
+            
+            <div class="roadmap">
+                <div class="milestone"><span>📍</span> ระยะสั้น (2020-2030) <span>นำร่อง</span></div>
+                <div class="milestone"><span>📋</span> กลาง (2031-2040) <span>ขยายผล</span></div>
+                <div class="milestone"><span>🌱</span> ระยะยาว (2041-2050) <span>ไฮโดรเจนสีเขียวทั่วประเทศ</span></div>
+            </div>
+
+            <div class="carbon-targets">
+                <div class="target-item">
+                    <div class="target-year">2050</div>
+                    <div>ความเป็นกลางทางคาร์บอน<br><small>(Carbon Neutrality)</small></div>
+                </div>
+                <div class="target-item">
+                    <div class="target-year">2065</div>
+                    <div>การปล่อยก๊าซเรือนกระจกสุทธิเป็นศูนย์<br><small>(Net Zero)</small></div>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; background: #e5f3fa; padding: 1rem; border-radius: 40px;">
+                ✅ ระยะสั้น: โครงการนำร่อง + เตรียมกฎระเบียบ | ระยะยาว: เน้นโครงสร้างพื้นฐานไฮโดรเจนสีเขียวทั่วประเทศ
+            </p>
+        </section>
+
+        <!-- สรุป -->
+        <section>
+            <h2><span>🔮</span> สรุป: จิ๊กซอว์สำคัญของอนาคต</h2>
+            <div class="summary-box">
+                <p>💧 <strong>ไฮโดรเจนคือจิ๊กซอว์ชิ้นสำคัญ</strong> ที่จะช่วยแก้ปัญหาความไม่เสถียรของพลังงานหมุนเวียน และเป็นพลังงานทางเลือกที่จะช่วยลดภาวะโลกร้อนในระยะยาวได้อย่างมีประสิทธิภาพ</p>
+                <p style="font-size: 1.1rem; margin-top: 1rem;">🌍 สะอาด เก็บง่าย ใช้ได้หลายรูปแบบ — พลังงานที่เปลี่ยนโลก</p>
+            </div>
+        </section>
+
+        <hr>
+        <footer>
+            <p>🌐 อ้างอิงข้อมูลจากสรุป "ไฮโดรเจน: พลังงานแห่งอนาคต" | ออกแบบเว็บเพื่อนำเสนอความแตกต่างของสีและกระบวนการผลิต</p>
+            <p style="margin-top: 0.5rem;">✨ พลังงานสีเขียว เพื่อโลกที่น่าอยู่สำหรับทุกคน ✨</p>
+        </footer>
+    </main>
+</body>
+</html>
